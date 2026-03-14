@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$MODE</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.hero{
+  position:relative;
+  min-height:100vh;
+  background-image:url('banner.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:24px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.42), rgba(0,0,0,0.12) 40%, rgba(0,0,0,0.08));
+}
+
+.info-card{
+  position:relative;
+  z-index:1;
+  width:min(760px, calc(100% - 24px));
+  margin-bottom:24px;
+  padding:28px 24px 24px;
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:24px;
+  background:rgba(18,18,18,0.26);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.28);
+  text-align:center;
+}
+
+.ticker{
+  margin:0;
+  font-size:clamp(54px, 8vw, 88px);
+  line-height:0.95;
+  font-weight:900;
+  color:#b8ff4d;
+  letter-spacing:0.02em;
+  text-shadow:
+    0 0 6px rgba(184,255,77,0.30),
+    0 0 16px rgba(184,255,77,0.18);
+  opacity:0;
+  transform:translateY(24px);
+  animation:fadeUp 1s ease forwards;
+}
+
+.ca{
+  margin-top:18px;
+  padding:16px 18px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  font-family:monospace;
+  font-size:clamp(16px, 2.8vw, 22px);
+  color:rgba(255,255,255,0.96);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.actions{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.copy-btn{
+  padding:14px 22px;
+  border:none;
+  border-radius:14px;
+  background:#b8ff4d;
+  color:#000;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.copy-btn:hover{opacity:0.92}
+
+.x-btn{
+  width:52px;
+  height:52px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  background:rgba(255,255,255,0.92);
+  color:#000;
+  border:1px solid rgba(255,255,255,0.85);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  font-size:22px;
+  font-weight:900;
+  line-height:1;
+}
+
+.x-btn:hover{opacity:0.9}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media (max-width:640px){
+  .hero{
+    min-height:100svh;
+    background-position:36% center;
+    padding:16px;
+  }
+  .info-card{
+    padding:22px 18px 18px;
+    border-radius:20px;
+    margin-bottom:16px;
+  }
+  .actions{
+    gap:12px;
+  }
+}
+</style>
+</head>
+<body>
+  <section class="hero">
+    <div class="info-card">
+      <h1 class="ticker">$MODE</h1>
+
+      <div class="ca" id="contract">CA: coming soon</div>
+
+      <div class="actions">
+        <button class="copy-btn" onclick="copyAddress()">Copy CA</button>
+        <a class="x-btn" href="https://x.com/i/communities/2032544448635174986" target="_blank" aria-label="X community">X</a>
+      </div>
+    </div>
+  </section>
+
+<script>
+function copyAddress(){
+  const text = document.getElementById('contract').innerText;
+  navigator.clipboard.writeText(text);
+  alert('Copied');
+}
+</script>
+</body>
+</html>
