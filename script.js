@@ -1,4 +1,3 @@
-
 function startScanning() {
     // Hide the radar and button, show wallet input
     document.querySelector('.radar-container').style.display = 'none';
@@ -7,7 +6,7 @@ function startScanning() {
 
 function scanWallet() {
     const walletAddress = document.getElementById('walletAddress').value;
-
+    
     // Hide the wallet input, show result
     document.querySelector('.wallet-input').style.display = 'none';
     document.querySelector('.result').style.display = 'block';
