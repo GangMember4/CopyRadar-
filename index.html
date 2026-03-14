@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CopyRadar — Find Copy Traders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="header">
+    <a href="#" class="logo">
+      <span class="logo-icon">◉</span>
+      <span class="logo-text">CopyRadar</span>
+    </a>
+    <nav class="nav">
+      <a href="#radar">Radar</a>
+      <a href="#search">Search</a>
+      <a href="#" class="nav-coming">Docs</a>
+      <a href="#" class="nav-coming">Token</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero" id="radar">
+      <h1 class="hero-title">Track copy traders on Solana</h1>
+      <p class="hero-sub">Scan any wallet. Discover who copies whom.</p>
+
+      <div class="radar-wrap">
+        <div class="radar" aria-hidden="true">
+          <div class="radar-circle radar-circle-1"></div>
+          <div class="radar-circle radar-circle-2"></div>
+          <div class="radar-circle radar-circle-3"></div>
+          <div class="radar-circle radar-circle-4"></div>
+          <div class="radar-sweep"></div>
+          <div class="radar-center"></div>
+        </div>
+      </div>
+
+      <div class="cta-block" id="cta-block">
+        <button type="button" class="btn btn-primary" id="btn-search-cta">Search for copy traders</button>
+      </div>
+
+      <div class="search-block hidden" id="search-block">
+        <label for="wallet-input" class="sr-only">Solana wallet address</label>
+        <input
+          type="text"
+          id="wallet-input"
+          class="input-wallet"
+          placeholder="Paste Solana wallet address..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="input-hint" id="wallet-hint"></p>
+        <button type="button" class="btn btn-primary" id="btn-search">Search</button>
+        <button type="button" class="btn btn-ghost" id="btn-back">Back</button>
+      </div>
+
+      <div class="result-block hidden" id="result-block">
+        <div class="result-content" id="result-content"></div>
+        <button type="button" class="btn btn-primary hidden" id="btn-show-traders">Show copy-traders</button>
+        <button type="button" class="btn btn-ghost" id="btn-new-search">New search</button>
+      </div>
+
+      <div class="modal hidden" id="modal">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-box">
+          <h2 class="modal-title">Copy-traders list</h2>
+          <p class="modal-text">This feature is available only for holders of <strong>1000+</strong> tokens. More details soon.</p>
+          <button type="button" class="btn btn-primary" id="modal-close">OK</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#" class="logo footer-logo">
+        <span class="logo-icon">◉</span>
+        <span class="logo-text">CopyRadar</span>
+      </a>
+      <div class="footer-links">
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+        <a href="#">Discord</a>
+        <a href="#">Docs</a>
+      </div>
+      <p class="footer-copy">© CopyRadar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
